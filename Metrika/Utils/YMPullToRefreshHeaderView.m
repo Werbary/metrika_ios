@@ -32,7 +32,10 @@
 
 - (void)reload {
     if (self.target && [self.target respondsToSelector:self.action]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [self.target performSelector:self.action];
+#pragma clang diagnostic pop
     }
 }
 

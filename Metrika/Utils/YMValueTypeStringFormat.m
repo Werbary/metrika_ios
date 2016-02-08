@@ -49,16 +49,16 @@
 
     YMValueTypeStringFormat *format = [[self alloc] init];
     if (seconds < minute) {
-        format.value = [NSString stringWithFormat:@"%i", seconds];
+        format.value = [NSString stringWithFormat:@"%@", @(seconds)];
         format.type = NSLocalizedString(@"VF-seconds", @"сек");
 
     } else if (seconds < hour) {
         NSInteger firstPart = seconds / minute;
         NSInteger secondPart = (seconds % minute) * 10 / minute;
         if (secondPart == 0) {
-            format.value = [NSString stringWithFormat:@"%i", firstPart];
+            format.value = [NSString stringWithFormat:@"%@", @(firstPart)];
         } else {
-            format.value = [NSString stringWithFormat:@"%i.%i", firstPart, secondPart];
+            format.value = [NSString stringWithFormat:@"%@.%@", @(firstPart), @(secondPart)];
         }
         format.type = NSLocalizedString(@"VF-minutes", @"мин");
 
@@ -66,9 +66,9 @@
         NSInteger firstPart = seconds / hour;
         NSInteger secondPart = (seconds % hour) * 10 / hour;
         if (secondPart == 0) {
-            format.value = [NSString stringWithFormat:@"%i", firstPart];
+            format.value = [NSString stringWithFormat:@"%@", @(firstPart)];
         } else {
-            format.value = [NSString stringWithFormat:@"%i.%i", firstPart, secondPart];
+            format.value = [NSString stringWithFormat:@"%@.%@", @(firstPart), @(secondPart)];
         }
         format.type = NSLocalizedString(@"VF-hours", @"ч");
 
@@ -76,9 +76,9 @@
         NSInteger firstPart = seconds / day;
         NSInteger secondPart = (seconds % day) * 10 / day;
         if (secondPart == 0) {
-            format.value = [NSString stringWithFormat:@"%i", firstPart];
+            format.value = [NSString stringWithFormat:@"%@", @(firstPart)];
         } else {
-            format.value = [NSString stringWithFormat:@"%i.%i", firstPart, secondPart];
+            format.value = [NSString stringWithFormat:@"%@.%@", @(firstPart), @(secondPart)];
         }
         format.type = NSLocalizedString(@"VF-days", @"д");
     }

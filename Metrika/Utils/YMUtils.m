@@ -56,7 +56,7 @@ NSComparisonResult floatCompare(float value1, float value2) {
     NSString *var = nil;
     NSUInteger counter = 0;
     while (true) {
-        var = [NSString stringWithFormat:@"%@ %d", base, ++counter];
+        var = [NSString stringWithFormat:@"%@ %lu", base, ++counter];
         YMAccountInfo *match = [existingAccounts bk_match:^BOOL(YMAccountInfo *info) {
             return [info.name isEqualToString:var];
         }];
@@ -160,7 +160,7 @@ NSComparisonResult floatCompare(float value1, float value2) {
     }
     NSUInteger intNumber = (NSUInteger) number;
     if (intNumber < 1000)
-        return [NSString stringWithFormat:@"%i", intNumber];
+        return [NSString stringWithFormat:@"%@", @(intNumber)];
     else if (intNumber < 100000) {
         NSInteger div = intNumber / 1000;
         NSInteger mod = (intNumber % 1000) / 100;

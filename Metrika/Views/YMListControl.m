@@ -90,7 +90,7 @@
     self.selectedIndex = (NSUInteger) row;
     NSString *selectedString = self.dataArray[(NSUInteger) row];
     self.title.text = selectedString;
-    [self.target performSelector:self.action withObject:[NSNumber numberWithInt:row]];
+    [self.target performSelector:self.action withObject:[NSNumber numberWithInteger:row]];
 }
 
 

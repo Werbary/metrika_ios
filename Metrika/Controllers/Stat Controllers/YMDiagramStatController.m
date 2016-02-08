@@ -48,7 +48,7 @@
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    if (UIDeviceOrientationIsPortrait(toInterfaceOrientation)) {
+    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
         self.dataSource.selectedTypeIndex = 0;
     }
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];

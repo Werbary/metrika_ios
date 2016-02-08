@@ -188,7 +188,7 @@
             return kDiagramTableCellPortraitHeight;
 
         } else {
-            CGFloat secondSectionHeight = tableView.height - kDiagramTableCellPortraitHeight * totalCount;
+//            CGFloat secondSectionHeight = tableView.height - kDiagramTableCellPortraitHeight * totalCount;
             CGFloat minHeight = [YMAbstractInfoElementCell closedHeight];
 
             if (self.selectedRowIndex == NSNotFound) {
